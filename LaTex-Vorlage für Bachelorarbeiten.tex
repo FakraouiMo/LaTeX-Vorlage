@@ -1,0 +1,169 @@
+\documentclass[12pt, a4paper, oneside]{article}
+
+% Pakete für Formatierung und Schrift
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{acronym}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{mathptmx}  % Times Schriftart für PDFLaTeX
+
+% Seitengeometrie gemäß Vorgaben
+\geometry{top=4cm, bottom=2cm, left=4cm, right=2cm}
+
+% Zeilenabstand und Absatzabstand
+\onehalfspacing
+\setlength{\parskip}{6pt} % Abstand nach Absätzen
+\setlength{\parindent}{0cm} % Keine Einrückung bei neuen Absätzen
+
+% Einstellungen für Überschriften
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries\fontsize{16pt}{16pt}\selectfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\fontsize{14pt}{14pt}\selectfont}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bfseries\fontsize{12pt}{12pt}\selectfont}{\thesubsubsection}{1em}{}
+
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+% Fußnoten
+\renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
+
+% Einstellungen für den Quellcode
+\lstset{
+	language=R,
+	basicstyle=\ttfamily\small,
+	literate={\u00d6}{{\"O}}1 {\u00c4}{{\"A}}1 {\u00dc}{{\"U}}1 {\u00df}{{\ss}}1 {\u00fc}{{\"u}}1 {\u00e4}{{\"a}}1 {\u00f6}{{\"o}}1
+}
+
+\begin{document}
+	
+	% Deckblatt
+	\begin{titlepage}
+		\centering
+		% \includegraphics[width=0.3\textwidth]{logo.png} % Logo falls gewünscht hier einfügen
+		
+		\textbf{Anonyme Hochschule für Ghostwriting}\\
+		\textbf{Studienzentrum Beispielstadt}\vspace{2cm}
+		
+		\textbf{\LARGE Bachelorarbeit}\vspace{1.5cm}
+		
+		zur Erlangung des Grades eines\\
+		\textbf{Bachelor of Science (B. Sc.)}\vspace{1.5cm}
+		
+		über das Thema\\
+		\textbf{\LARGE Beispielthema im Beispielkontext}\\
+		\textbf{\LARGE – eine beispielhafte Studie}\vspace{1.5cm}
+		
+		von\\
+		Max Beispielstudent\vspace{2cm}
+		
+		\begin{flushleft}
+			Erstgutachter: \hspace{0.3cm} Prof. Dr. Beispiel Dozent\\
+			Matrikelnummer: \hspace{0.3cm} 123456\\
+			Abgabedatum: \hspace{0.3cm} TT.MM.JJJJ
+		\end{flushleft}
+	\end{titlepage}
+	\newpage  % Seitenumbruch nach dem Deckblatt
+	
+	% Inhaltsverzeichnis
+	\begin{spacing}{1}
+		\tableofcontents
+		\newpage
+	\end{spacing}
+	
+	% Abbildungsverzeichnis
+	\section*{Abbildungsverzeichnis}
+	\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+	\listoffigures
+	\newpage
+	
+	% Tabellenverzeichnis
+	\section*{Tabellenverzeichnis}
+	\addcontentsline{toc}{section}{Tabellenverzeichnis}
+	\listoftables
+	\newpage
+	
+	% Abkürzungsverzeichnis
+	\section*{Abkürzungsverzeichnis}
+	\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+	\begin{acronym}
+		\acro{BI}{Business Intelligence}
+		% Weitere Abkürzungen hier hinzufügen
+	\end{acronym}
+	\newpage
+	
+	% Sperrvermerk (optional)
+	\section*{Sperrvermerk}
+	\addcontentsline{toc}{section}{Sperrvermerk}
+	Die vorliegende Arbeit enthält vertrauliche Informationen und ist nur für die Hochschule sowie die Gutachter bestimmt.
+	\newpage
+	
+	% Einleitung
+	\section{Einleitung}
+	\subsection{Problemstellung der Arbeit}
+	Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+	
+	\subsection{Zielsetzung der Arbeit}
+	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	
+	\subsection{Aufbau der Arbeit}
+	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	
+	% Methodisches Vorgehen
+	\section{Methodisches Vorgehen}
+	\subsection{Literaturrecherche}
+	Beschreiben Sie die Methodik der Literaturrecherche.
+	
+	\subsection{Qualitative Forschung: Experteninterviews}
+	Erläutern Sie die qualitative Forschungsmethode.
+	
+	\subsection{Prototyping}
+	Diskutieren Sie den Prototyping-Ansatz.
+	
+	\subsection{Quantitative Forschung: Fragebogen}
+	Beschreiben Sie die quantitative Forschungsmethodik mittels Fragebogen.
+	
+	% Konzeptioneller Hintergrund
+	\section{Konzeptioneller Hintergrund}
+	Einführung in die theoretischen Grundlagen, die den Rahmen der Arbeit bilden.
+	
+	% Ergebnisse
+	\section{Ergebnisse}
+	Vorstellung der Forschungsergebnisse.
+	
+	% Schluss
+	\section{Schluss}
+	\subsection{Zusammenfassung}
+	Zusammenfassung der wichtigsten Ergebnisse.
+	
+	\subsection{Ausblick}
+	Ein kurzer Ausblick auf mögliche zukünftige Forschungen.
+	
+	% Anhang
+	\newpage
+	\section*{Anhang}
+	\addcontentsline{toc}{section}{Anhang}
+	Zusätzliche Informationen und Dokumente, die im Hauptteil der Arbeit nicht untergebracht wurden.
+	
+	% Literaturverzeichnis
+	\newpage
+	\section{Literatur- und Internetquellenverzeichnis}
+	\subsection{Literaturverzeichnis}
+	% \bibliographystyle{gerplain}
+	% \bibliography{literatur}
+	
+	\subsection{Internetquellenverzeichnis}
+	Internetquellen separat auflisten.
+	
+	% Eidesstaatliche Erklärung
+	\newpage
+	\section*{Eidesstaatliche Erklärung}
+	\addcontentsline{toc}{section}{Eidesstaatliche Erklärung}
+	Hiermit versichere ich, dass ich die vorliegende Arbeit selbstständig und ohne unerlaubte Hilfe angefertigt habe.
+	
+\end{document}
